@@ -1,8 +1,8 @@
 # Zadání samostatné práce – Unit testy
 
 ## Rozdělení skupin
-- **Skupina A:** `Kosik.cs`
-- **Skupina B:** `SpravaUzivatelu.cs`
+- **Skupina C:** `Kosik.cs`
+- **Skupina D:** `SpravaUzivatelu.cs`
 
 ---
 
@@ -14,9 +14,12 @@
 
 ---
 
-## ⚠️ Pravidla a omezení
+## 💡 Nápověda: Porovnávání kolekcí a polí
 
-* **Vypnuté pomůcky:** Vypněte si **GitHub Copilot** i všechny ostatní AI/kódovací našeptávače ve Visual Studiu.
-* **Povoleno:** Smíte používat výhradně své vlastní poznámky (např. ve Wordu).
-* **Dokumentace:** Pozorně sledujte **dokumentační komentáře** u jednotlivých metod – popisují očekávané chování i hraniční stavy.
-* **Pokrytí testů:** Nezapomínejte na testování **výjimek** (`Assert.ThrowsException`) a všech možných scénářů (vstupní hodnoty `null`, prázdné řetězce, hraniční hodnoty apod.).
+Pro ověřování výsledků metod, které vracejí pole nebo seznamy (např. `string[]` nebo `List<string>`), nepoužívejte klasický `Assert.AreEqual`. 
+
+Pro kolekce slouží třída **`CollectionAssert`**:
+
+```csharp
+// Ověří, zda dvě kolekce obsahují přesně stejné prvky ve stejném pořadí
+CollectionAssert.AreEqual(ocekavanePole, skutecnePole);
